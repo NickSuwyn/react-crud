@@ -19,6 +19,7 @@ export class HousesList extends React.Component {
     updateHouse = async (updatedHouse) => {
         await housesApi.put(updatedHouse);
         // Could be more efficient by updating the house in state instead of fetching them all again.
+        // The return from the api gives back the updated house. find and replace in state to avoid making new call.
         this.fetchHouses();
     };
 

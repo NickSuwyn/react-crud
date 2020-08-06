@@ -5,8 +5,10 @@ export const NewRoomForm = (props) => {
     const [area, setArea] = useState(undefined);
 
     const handleAreaInput = (e) => {
+        // basic input validation. Only setState if value is a positive number.
         const int = parseInt(e.target.value, 10);
         setArea(int >= 0 ? int : '');
+        // How would you inform the user the value they entered is invalid?
     };
 
     const onSubmit = (e) => {
@@ -36,7 +38,8 @@ export const NewRoomForm = (props) => {
                     onChange={handleAreaInput}
                     value={area}
                 />
-                <button>Add Room</button>
+                {/* how could you show this button as disabled/enabled based on form validation? */}
+                <button type='submit'>Add Room</button>
             </form>
         </div>
     );

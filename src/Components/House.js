@@ -22,10 +22,7 @@ export const House = (props) => {
 
     // fully reduced
     const addNewRoom = (room) =>
-        updateHouse({
-            ...house,
-            rooms: [...house.rooms, room]
-        });
+        updateHouse({ ...house, rooms: [...house.rooms, room] });
 
     // This is small enough to be included in House, I extracted from render() purely as example, would leave in normally.
     const rooms = () => (
