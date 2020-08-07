@@ -4,7 +4,8 @@ import { housesApi } from '../rest/HousesApi.js';
 
 export class HousesList extends React.Component {
     state = {
-        houses: []
+        houses: [],
+        isLoading: true
     };
 
     componentDidMount() {
@@ -13,7 +14,7 @@ export class HousesList extends React.Component {
 
     fetchHouses = async () => {
         const houses = await housesApi.get();
-        this.setState({ houses });
+        this.setState({ houses, isLoading: false });
     };
 
     updateHouse = async (updatedHouse) => {
@@ -24,7 +25,10 @@ export class HousesList extends React.Component {
     };
 
     render() {
-        return (
+        // could have logic needed at render.
+        return this.state.isLoading ? (
+            <h1>Loading...</h1>
+        ) : (
             <div className='house-list'>
                 {this.state.houses.map((house) => (
                     <House

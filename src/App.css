@@ -49,13 +49,25 @@
 }
 
 .rooms-list {
+    padding: 0 25px;
     background-color: cornsilk;
     text-align: left;
+}
+
+.rooms-list button {
+    max-height: 20px;
 }
 
 .rooms-list button:hover {
     background-color: red;
     color: white;
+}
+
+.rooms-list div {
+    margin-bottom: 5px;
+    border-bottom: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
 }
 
 .new-room-form h4 {

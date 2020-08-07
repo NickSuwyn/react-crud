@@ -26,16 +26,16 @@ export const House = (props) => {
 
     // This is small enough to be included in House, I extracted from render() purely as example, would leave in normally.
     const rooms = () => (
-        <ul className={'rooms-list'}>
+        <div className={'rooms-list'}>
             {house.rooms.map((room, index) => (
-                <li key={index}>
+                <div key={index}>
                     <label> {`${room.name} Area: ${room.area}`}</label>
                     <button onClick={(e) => deleteRoom(room._id, house._id)}>
-                        Delete
+                        X
                     </button>
-                </li>
+                </div>
             ))}
-        </ul>
+        </div>
     );
 
     return (
